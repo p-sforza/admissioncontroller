@@ -1,0 +1,39 @@
+apiVersion: admissionregistration.k8s.io/v1beta1
+  kind: ValidatingWebhookConfiguration 
+  metadata:
+    name: <controller_name> 
+  webhooks:
+  - name: <webhook_name> 
+    clientConfig: 
+      service:
+        namespace: default  
+        name: kubernetes 
+       path: <webhook_url> 
+      caBundle: <cert> 
+    rules: 
+    - operations: 
+      - <operation>
+      apiGroups:
+      - ""
+      apiVersions:
+      - "*"
+      resources:
+      - <resource>
+    failurePolicy: <policy>
+
+#Specifies a validating admission webhook configuration.
+#The name for the webhook admission object.
+#The name of the webhook to call.
+#Information about how to connect to, trust, and send data to the webhook server.
+#The project where the front-end service is created.
+#The name of the front-end service.
+#The webhook URL used for admission requests.
+#A PEM-encoded CA certificate that signs the server certificate used by the webhook server.
+#Rules that define when the API server should use this controller.
+#The operation that triggers the API server to call this controller.
+#create
+#update
+#delete
+#connect
+
+#Specifies how the policy should proceed if the webhook admission server is unavailable. Either Ignore (allow/fail open) or Fail (block/fail closed).
