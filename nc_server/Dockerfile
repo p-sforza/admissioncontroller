@@ -4,4 +4,4 @@ RUN yum install -y nc
 EXPOSE 8080
 #CMD ["/usr/bin/nc", "-lv", "8080", "&"]
 #ENTRYPOINT ["/bin/bash"]
-ENTRYPOINT ["nc -lv 8080"]
+ENTRYPOINT ["/usr/bin/nc -lv 8080"]
