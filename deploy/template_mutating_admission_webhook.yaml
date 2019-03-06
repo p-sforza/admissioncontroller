@@ -20,3 +20,4 @@ apiVersion: admissionregistration.k8s.io/v1beta1
       resources:
       - <resource>
     failurePolicy: <policy>
+    # Ignore | Fail | Retry | Abort
