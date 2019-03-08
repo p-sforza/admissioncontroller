@@ -4,7 +4,7 @@ Controll the response json editing the file response.json
 
 The REST call will be dumped in logs
 
-Before continue, prepare certificates if you want to expose via ssl
+Before continue, prepare certificates if you want to expose via ssl (required by k8s webhooks)
 
 Build and Deploy on OpenShift with:
 
